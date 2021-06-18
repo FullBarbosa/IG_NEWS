@@ -1,4 +1,3 @@
-// scss para estilo
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +9,8 @@
 
   --gray-50: #e1e1e6;
   --gray-300: #a8a8b3;
+  --gray-800: #29292e;
+  --gray-850: #1f2729;
   --gray-900: #121214;
 
   --cyan-500: #61dafb;
@@ -36,6 +37,11 @@ button {
   font: 400 1rem "Roboto", sans-serif;
 }
 
+body {
+  background: var(--gray-900);
+  color: var(--white);
+}
+
 button {
   cursor: pointer;
 }
@@ -43,19 +49,4 @@ button {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-body {
-  background: var(--gray-900);
-}
-
-div {
-  h1 {
-    color: var(--cyan-500);
-  }
-
-  p {
-    color: var(--yellow-500);
-    font-weight: bold;
-  }
 }

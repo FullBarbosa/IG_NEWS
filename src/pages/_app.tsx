@@ -1,18 +1,15 @@
-import { AppProps } from "next/app";
-
-import { GlobalStyled } from "../styles/global";
-
+import { AppProps } from 'next/app';
+import { Provider as NextAuthProvider } from 'next-auth/client';
+import { Header } from '../components/Header';
 // inportar eestilo scss
-// import "../styles/global.scss";
+import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <NextAuthProvider session={pageProps.session}>
+      <Header />
       <Component {...pageProps} />
-
-      {/* importar estilo styled-components */}
-      <GlobalStyled />
-    </>
+    </NextAuthProvider>
   );
 }
 
