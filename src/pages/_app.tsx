@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import { Provider as NextAuthProvider } from 'next-auth/client';
 import { Header } from '../components/Header';
-// inportar eestilo scss
+// importar estilo scss
 import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,5 +12,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </NextAuthProvider>
   );
 }
-
 export default MyApp;
