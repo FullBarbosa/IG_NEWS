@@ -16,11 +16,44 @@ export default NextAuth({
     // ...add more providers here
   ],
 
-  // pegar dados do git
+  
   callbacks: {
+    
+    async session(session){
+      try{
+
+      const useActiveSubscription = await fauna.query(
+        q.Get(
+         q.Intersection([
+          q.Match(
+            q.Index('subscription_by_user_ref'),
+            q.Select(
+              "ref",
+              q.Get(
+                q.Match(
+                  q.Index('user_by_email'),
+                  q.Casefold(session.user.email)
+                )
+              )
+            )
+          ),
+          q.Match(
+            q.Index('subscription_by_status'),
+            "active"
+            )
+         ])
+        )
+      )
+      return {...session, activeSubscription: useActiveSubscription};
+      }
+      catch{
+        return{...session, activeSubscription: null};
+      }
+    },
+    // pegar dados do git
     async signIn(user, account, profile) {
       const { email } = user;
-
+    
       try {
         await fauna.query(
           q.If(
