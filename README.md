@@ -31,9 +31,9 @@
    Desenvolvimento de aplicação para blog, com objetivo principal informar os usuários assinantes um melhor conteúdo voltado a tecnologia. O desenvolvimento envolve uma integração com o FAUNA.DB para autenticação de usuários e integração com o Stripe como meio de pagamento. A aplicação consta com integração com PRISMIC ( CMS ) para criação dos posts do blog. Testes foi utilizado o JEST para validação em componentes e funcionalidades.
   </h4>
 
-  <img src="./docs/image/ignews.png" alt="Gif">
-  <img src="./docs/image/ignews.png" alt="Gif">
-  <img src="./docs/image/testeignews.png" alt="Gif">
+  <img src="./docs/image/ignews.gif" alt="Gif">
+  <img src="./docs/image/ignews.png" alt="imagem_aplication">
+  <img src="./docs/image/testeignews.png" alt="imagem_teste">
 </div>
 
 <div id="tecnologias">
@@ -105,7 +105,7 @@ $ npm install
 # Install Stripe webHooks 
 $ stripe login 
 
-# Install Stripe webHooks returno http 
+# Stripe webHooks returno http 
 $ stripe listen --forward-to localhost:caminho_base_rota_api
 ```
  </div>
