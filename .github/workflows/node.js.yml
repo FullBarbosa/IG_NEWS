@@ -10,10 +10,8 @@ on:
     branches: [ main ]
     
 jobs:
-  build:
-  
+  run-test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
@@ -26,5 +24,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm test
+    - run: yarn install
+    - run: yarn test
